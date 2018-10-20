@@ -5,11 +5,8 @@ Imports SwConst
 Public Class Tubo
     Public Property Codigo As String
     Public Property Template As String
-    'Public Property DiaExterno As String
-    'Public Property EspParede As String
-    'Public Property DiaBSolda As String
-    'Public Property ProfBSolda As String
-    'Public Property DiaEncaixeRamal As String
+    Public Property diamBSoldaTubo As String
+
 
     Private _diaExterno As String
     Public Property DiaExterno() As String

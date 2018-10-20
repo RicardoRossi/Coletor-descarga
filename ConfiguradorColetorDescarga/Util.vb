@@ -64,4 +64,30 @@ Module Util
 
     End Sub
 
+
+    Sub SetPropriedade(swApp As SldWorks.SldWorks, swModel As ModelDoc2, nomeDaProp As String, valorDaProp As String)
+
+        swModel = swApp.ActiveDoc
+        Dim swExt As ModelDocExtension
+        swExt = swModel.Extension
+        Dim configMgr As ConfigurationManager
+        Dim swCustProp As CustomPropertyManager
+        configMgr = swModel.ConfigurationManager
+        Dim config As Configuration
+        config = configMgr.ActiveConfiguration
+        Dim nomeConfig = config.Name
+        swCustProp = swExt.CustomPropertyManager(nomeConfig)
+        swCustProp.Add3(nomeDaProp, swCustomInfoType_e.swCustomInfoText, valorDaProp, swCustomPropertyAddOption_e.swCustomPropertyReplaceValue)
+
+    End Sub
+
+    Public Enum Extensao
+        SLDPRT
+        SLDASM
+        SLDDRW
+        PDF
+        DWG
+        DXF
+    End Enum
+
 End Module
